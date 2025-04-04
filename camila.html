@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f0d2d2;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        hr {
+            border: 1px solid #ccc;
+        }
+        #btnSim {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(78, 197, 78);
+            border-radius: 25px;
+        }
+        #btnNao {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(207, 97, 97);
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oi, meu amor <3!</h1>
+    <div id="pergunta">
+        <h3>Hoje tem cú?</h3>
+        <input type="button" value="Sim" id="btnSim" onclick="responder('sim')">
+        <input type="button" value="Não" id="btnNao" onmouseenter="entrou()" onclick="responder('nao')">
+    </div>
+
+    <div id="resposta"></div>
+
+    <script>
+        var btnNao = window.document.getElementById('btnNao');
+        let canMove = true;
+        function entrou() {
+            if (!canMove) return;
+            canMove = false;
+            setTimeout(() => canMove = true, 500); // Delay of 500ms
+
+            var maxX = window.innerWidth - btnNao.clientWidth;
+            var maxY = window.innerHeight - btnNao.clientHeight;
+            var x = Math.max(0, Math.min(Math.floor(Math.random() * maxX), maxX));
+            var y = Math.max(0, Math.min(Math.floor(Math.random() * maxY), maxY));
+            btnNao.style.position = 'absolute';
+            btnNao.style.left = `${x}px`;
+            btnNao.style.top = `${y}px`;
+        }
+        function responder(resposta) {
+            var respostaDiv = document.getElementById('resposta');
+            if (resposta === 'sim') {
+            respostaDiv.innerHTML = '<p>Era só uma brincadeira, mas que bom que esteja considerando rs</p><p>Fiz isso aqui pra te dizer que <strong> te amo demais </strong>e cada instante com você é tipo quando começo a trabalhar: fico viciado e não quero mais parar.</p><p><strong>Feliz 8 meses ❤</strong><p>Em <span id="contador">15</span> segundos...</p>';
+            
+            let contador = 15;
+            const interval = setInterval(function() {
+                contador--;
+                document.getElementById('contador').textContent = contador;
+                if (contador <= 0) {
+                clearInterval(interval);
+                window.location.href = 'https://www.youtube.com/watch?v=tGFzyhrUGVs';
+                }
+            }, 1000);
+            
+            } else if (resposta === 'nao') {
+            respostaDiv.innerHTML = '<p>Ah, que pena! Espero que seu dia melhore! 💖</p>';
+            }
+        }
+        
+    
+    </script>
+</body>
+</html>
