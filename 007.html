@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Essa é a verificação da sua velocidade</h1>
+    <p>Sua velocidade atual:</p>
+    <input type="number" id="velocidade" placeholder="Digite sua velocidade">
+    <input type="button" value="Verificar" id="btnVerificar" onclick="verificarVelocidade()">
+    <div id="resultado"></div>
+
+    <script>
+        function verificarVelocidade() {
+            var velocidadetxt = document.getElementById('velocidade').value;
+            var velocidade = parseInt(velocidadetxt, 10);
+            var resultado = document.getElementById('resultado');
+            
+            if (velocidade > 80) {
+                resultado.innerHTML = "Você está acima da velocidade permitida!";
+            } else {
+                resultado.innerHTML = "Você está dentro da velocidade permitida.";
+            }
+        }
+    </script>
+</body>
+</html>
