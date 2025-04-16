@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora De Idade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora De Idade</h1>
+    </header>
+    <section>
+        <div id="divCalculadora">
+            <p>Ano de Nascimento: <input type="number" id="txtAnoNascimento" placeholder="Digite o ano de nascimento"> </p>
+
+            <p>Sexo: <input type="radio" name="radSexo" id="radMasculino" value="Masculino"> Masculino
+            <input type="radio" name="radSexo" id="radFeminino" value="Feminino"> Feminino</p>
+
+            <p><input type="button" value="Calcular" onclick="calcular()"></p>
+        </div>
+        <div id="divResultado"></div>
+    </section>
+    <footer>
+        <p>@criatividade</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
