@@ -1,0 +1,11 @@
+{
+    "editor.inlineSuggest.enabled": true,
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.iconTheme": "vs-seti",
+    "editor.inlineSuggest.showToolbar": "onHover",
+    "editor.suggest.showStatusBar": false,
+    "workbench.activityBar.orientation": "vertical",
+    "workbench.view.showQuietly": {
+        "workbench.panel.output": true
+    }
+}
