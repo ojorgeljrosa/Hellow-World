@@ -1,7 +1,8 @@
-
-
 header{
     font-family: Arial;
+    width: 250px;
+    text-align: center;
+
 }
 
 body{
@@ -20,11 +21,29 @@ button{
     
 }
 
-#divDisplay{
+#display{
     font-family: Arial;
     font-size: 20px;
-    align-items: ;
     height: 70px;
-    width: 300px;
+    width: 250px;
     background-color: rgb(208, 214, 214);
+
+    align-items: center;
+    display: flex;
+    justify-content:right;
+}
+
+
+
+#divTeclado{
+    font-family: Arial;
+    font-size: 20px;
+    height: auto;
+    width: 250px;
+    background-color: rgb(70, 71, 71);
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;;
+    margin-top: 10px;;
+
 }
