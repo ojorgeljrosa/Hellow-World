@@ -8,7 +8,7 @@ while (fatia>0) {
 
 console.log("Fatias acabaram")
 
-
+/*
 estrutura de repetição com teste logico no inicio e no final 
 
 do {
@@ -16,4 +16,4 @@ do {
     fatia--
 }
 while (fatia>0)                 
-console.log("Fatias acabaram")
+console.log("Fatias acabaram")*/
