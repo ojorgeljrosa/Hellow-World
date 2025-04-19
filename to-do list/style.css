@@ -40,7 +40,7 @@ button{
 .linhaItem{
     border-width: 5px;
     border-color: aqua;
-    background-color: black;
+    background-color: rgb(152, 136, 136);
 }
 
 .rmvButton{
@@ -50,4 +50,9 @@ button{
     background-color: ;
     
 
+}
+
+.checkbox {
+    height: 15px;
+    width: 15px;    
 }
