@@ -15,50 +15,25 @@ window.document.body.addEventListener('keypress', function(event) {
 
 function adicionar(){
 
+if (    divLista.innerText == "Adicione um item..."){
+    divLista.innerHTML= ''
+}
+
     if (inputAdicionar.value.trim() !== '') {
         array.push(inputAdicionar.value);
+
+        let textConcluido = inputAdicionar.value
 
         let novaLinha = document.createElement('p');
         novaLinha.className = 'linhaItem'
         novaLinha.id = inputAdicionar.value
         novaLinha.value = inputAdicionar.value
         divLista.appendChild(novaLinha);
-        //window.document.getElementById(inputAdicionar.value).innerText = inputAdicionar.value
         
         let novoCheck = document.createElement('input');
         novoCheck.type = 'checkbox'
         novoCheck.className = 'checkbox'
-        novoCheck.addEventListener('click', function() {
-
-            let ui = window.document.getElementById(')
-            
-            divLista.removeChild(novaLinha); //remove a linha da lista original
-                
-            let novaLinhaConcluida = document.createElement('p');
-            novaLinhaConcluida.className = 'linhaItem'
-            novaLinhaConcluida.id = inputAdicionar.value
-
-            divListaConcluida.appendChild(novaLinhaConcluida);
-            
-            let novoCheckConcluido = document.createElement('input');
-            novoCheckConcluido.type = 'checkbox'
-            novoCheckConcluido.className = 'checkbox'
-            novoCheckConcluido.addEventListener('click', function() {
-                //divLista.removeChild(novaLinhaConcluida);
-            })
-            novaLinhaConcluida.appendChild(novoCheckConcluido);
-
-            let novoTextConcluido = document.createElement('text');
-            novoTextConcluido.className = 'text'
-            novaLinhaConcluida.appendChild(novoTextConcluido);
-            novoTextConcluido.innerHTML = ' '+inputAdicionar.value;
-
-            let novoBotaoConcluido = document.createElement('button')
-            novoBotaoConcluido.className = 'rmvButton'
-            novoBotaoConcluido.innerHTML = 'Remover'
-            novoBotaoConcluido.type = 'button'
-            novaLinhaConcluida.appendChild(novoBotaoConcluido);
-            })
+        novoCheck.addEventListener('click', check)
             
 
         novaLinha.appendChild(novoCheck);
@@ -72,7 +47,9 @@ function adicionar(){
         novoBotao.className = 'rmvButton'
         novoBotao.innerHTML = 'Remover'
         novoBotao.type = 'button'
-      
+        novoBotao.addEventListener('click', function() {
+            divLista.removeChild(novaLinha);
+        })
         novaLinha.appendChild(novoBotao);
 
 
@@ -84,34 +61,80 @@ function adicionar(){
 
 }
 
-/*
-function adicionar(){
-    let item = document.createElement('p')
-    let texto = inputAdicionar.value
-    let checkbox = document.createElement('input')
 
-    checkbox.type = 'checkbox'
-    checkbox.className = 'checkbox'
-    checkbox.id = 'checkbox'
-    let label = document.createElement('label')
-    label.htmlFor = 'checkbox'
-    label.innerHTML = texto
-    let button = document.createElement('button')
-    button.className = 'rmvButton'
-    button.innerHTML = 'Remover'
-    button.type = 'button'
-    item.appendChild(checkbox)
-    item.appendChild(label)
-    item.appendChild(button)
-    let lista = window.document.getElementById('lista')
-    lista.appendChild(item)
-    inputAdicionar.value = ''
-    inputAdicionar.focus()
-}
-*/
- /*   
-  novoBotao.addEventListener('click', function() {
+
+function check(){
+    let textConcluido = this.parentNode.id
+    let novaLinha = this.parentNode
+    let novoCheck = this
+    let novoText = this.nextSibling
+    let novoBotao = this.nextSibling.nextSibling
+    let divListaConcluida = window.document.getElementById('listaConcluida')
+    let divLista = window.document.getElementById('lista')
+    
+
+    divLista.removeChild(novaLinha); //remove a linha da lista original
+                
+    let novaLinhaConcluida = document.createElement('p');
+    novaLinhaConcluida.className = 'linhaItem'
+    novaLinhaConcluida.id = inputAdicionar.value
+
+    divListaConcluida.appendChild(novaLinhaConcluida);
+    
+    let novoCheckConcluido = document.createElement('input');
+    novoCheckConcluido.type = 'checkbox'
+    novoCheckConcluido.className = 'checkbox'
+    novoCheckConcluido.checked = true
+    novoCheckConcluido.addEventListener('click', function() {
+        
+        divListaConcluida.removeChild(novaLinhaConcluida);
+
+        let novaLinha = document.createElement('p');
+        novaLinha.className = 'linhaItem'
+        novaLinha.id = textConcluido
+        novaLinha.value = textConcluido
+        divLista.appendChild(novaLinha);
+
+        let novoCheck = document.createElement('input');
+        novoCheck.type = 'checkbox'
+        novoCheck.className = 'checkbox'
+
+        novaLinha.appendChild(novoCheck);
+
+        let novoText = document.createElement('text');
+        novoText.className = 'text'
+        novoCheck.addEventListener('click', check)
+
+        novaLinha.appendChild(novoText);
+        novoText.innerHTML = ' '+textConcluido;
+
+        let novoBotao = document.createElement('button')
+        novoBotao.className = 'rmvButton'
+        novoBotao.innerHTML = 'Remover'
+        novoBotao.type = 'button'
+        novoBotao.addEventListener('click', function() {
             divLista.removeChild(novaLinha);
-            array = array.filter(item => item !== inputAdicionar.value);
-        });
-*/
+        })
+        novaLinha.appendChild(novoBotao);
+
+
+    })
+    novaLinhaConcluida.appendChild(novoCheckConcluido);
+
+    let novoTextConcluido = document.createElement('text');
+    novoTextConcluido.className = 'textConcluido'
+    novaLinhaConcluida.appendChild(novoTextConcluido);
+    novoTextConcluido.innerHTML = ' '+textConcluido;
+
+    let novoBotaoConcluido = document.createElement('button')
+    novoBotaoConcluido.className = 'rmvButton'
+    novoBotaoConcluido.innerHTML = 'Remover'
+    novoBotaoConcluido.type = 'button'
+    novoBotaoConcluido.addEventListener('click', function() {
+        divListaConcluida.removeChild(novaLinhaConcluida);
+    })
+    novaLinhaConcluida.appendChild(novoBotaoConcluido);
+    }   
+
+
+

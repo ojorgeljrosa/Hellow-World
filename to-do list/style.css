@@ -1,15 +1,12 @@
-
-
 header{
     font-family: Arial;
-    padding-left: 20px;
-    
+    padding-left: 20px;    
 }
 
 body{
     font-family: Arial;
     padding: 20px;
-
+    height: auto;
 }
 
 footer{
@@ -33,12 +30,15 @@ button{
     border-width: 5px;
     border-color: aquamarine;
     background-color: rgb(218, 218, 218);
-    height: 300px;
+    height: auto;
     width: 400px;
+    padding: 5px;
+    margin-top: 10px;
 }
 
 .linhaItem{
     border-width: 5px;
+    border-radius: 5px;
     border-color: aqua;
     background-color: rgb(152, 136, 136);
 }
@@ -46,13 +46,16 @@ button{
 .rmvButton{
     border-radius: 20px;
     margin-left: 10px;
-    height: 20px;
-    background-color: ;
-    
-
+    height: 20px; 
 }
 
 .checkbox {
     height: 15px;
     width: 15px;    
+}
+
+.textConcluido {
+    text-decoration: line-through;
+    color: rgb(75, 75, 75);
+    font-style: italic; ;
 }
